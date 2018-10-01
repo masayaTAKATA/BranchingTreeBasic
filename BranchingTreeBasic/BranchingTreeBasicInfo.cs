@@ -42,7 +42,7 @@ namespace BranchingTreeBasic
             get
             {
                 //Return a string identifying you or your company.
-                return "HP Inc.";
+                return "meenaxydesign";
             }
         }
         public override string AuthorContact
