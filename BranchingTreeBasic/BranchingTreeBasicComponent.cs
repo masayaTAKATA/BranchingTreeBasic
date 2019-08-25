@@ -22,7 +22,7 @@ namespace BranchingTreeBasic
         /// </summary>
         public BranchingTreeBasicComponent()
           : base("BranchingTreeBasic", "BranchingTreeBasic",
-              "Description",
+              "For prototype",
               "User", "Test")
         {
         }
