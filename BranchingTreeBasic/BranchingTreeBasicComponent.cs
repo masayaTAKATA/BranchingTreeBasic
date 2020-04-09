@@ -13,17 +13,10 @@ namespace BranchingTreeBasic
 {
     public class BranchingTreeBasicComponent : GH_Component
     {
-        /// <summary>
-        /// Each implementation of GH_Component must provide a public 
-        /// constructor without any arguments.
-        /// Category represents the Tab in which the component will appear, 
-        /// Subcategory the panel. If you use non-existing tab or panel names, 
-        /// new tabs/panels will automatically be created.
-        /// </summary>
+        //Constructor
+
         public BranchingTreeBasicComponent()
-          : base("BranchingTreeBasic", "BranchingTreeBasic",
-              "For prototype",
-              "User", "Test")
+          : base("BranchingTreeBasic", "BranchingTreeBasic", "For prototype", "User", "Test")
         {
         }
 
@@ -97,9 +90,10 @@ namespace BranchingTreeBasic
             DA.SetDataList(1, lines);
         }
 
+        //Method
         public List<Line> CreateBranch(List<Line> lines, double bScale, double bAng)
         {
-            List<Line> newLines = new List<Line>();
+            var newLines = new List<Line>();
 
             foreach (Line ln in lines)
             {
