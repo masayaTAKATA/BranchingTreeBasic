@@ -4,10 +4,6 @@ using System.Collections.Generic;
 using Grasshopper.Kernel;
 using Rhino.Geometry;
 
-// In order to load the result of this wizard, you will also need to
-// add the output bin/ folder of this project to the list of loaded
-// folder in Grasshopper.
-// You can use the _GrasshopperDeveloperSettings Rhino command for that.
 
 namespace BranchingTreeBasic
 {
@@ -15,14 +11,11 @@ namespace BranchingTreeBasic
     {
         //Constructor
 
-        public BranchingTreeBasicComponent()
-          : base("BranchingTreeBasic", "BranchingTreeBasic", "For prototype", "User", "Test")
+        public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BranchingTreeBasic", "For prototype", "User", "Test")
         {
         }
 
-        /// <summary>
-        /// Registers all the input parameters for this component.
-        /// </summary>
+        //Input
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
             pManager.AddNumberParameter("Length", "L", "The length of trunk", GH_ParamAccess.item);
@@ -31,20 +24,14 @@ namespace BranchingTreeBasic
             pManager.AddIntegerParameter("Branch Number", "N", "The number of branches", GH_ParamAccess.item);
         }
 
-        /// <summary>
-        /// Registers all the output parameters for this component.
-        /// </summary>
+        //Output
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
             pManager.AddIntegerParameter("Check", "C", "Check line list", GH_ParamAccess.item);
             pManager.AddLineParameter("Branches", "B", "Generated branching", GH_ParamAccess.list);
         }
 
-        /// <summary>
-        /// This is the method that actually does the work.
-        /// </summary>
-        /// <param name="DA">The DA object can be used to retrieve data from input parameters and 
-        /// to store data in output parameters.</param>
+        //Method(Entry point)
         protected override void SolveInstance(IGH_DataAccess DA)
         {
             //1.Declare placeholder variables for the input data.
