@@ -106,29 +106,12 @@ namespace BranchingTreeBasic
 
         }
 
-        /// <summary>
-        /// Provides an Icon for every component that will be visible in the User Interface.
-        /// Icons need to be 24x24 pixels.
-        /// </summary>
-        protected override System.Drawing.Bitmap Icon
-        {
-            get
-            {
-                // You can add image files to your project resources and access them like this:
-                //return Resources.IconForThisComponent;
-                //>>Icon made by Freepik from www.flaticon.com 
-                return BranchingTreeBasic.Properties.Resources.treeIcon;
-            }
-        }
+        
+        //>>Icon made by Freepik from www.flaticon.com 
+        protected override System.Drawing.Bitmap Icon => BranchingTreeBasic.Properties.Resources.treeIcon;
 
-        /// <summary>
-        /// Each component must have a unique Guid to identify it. 
-        /// It is vital this Guid doesn't change otherwise old ghx files 
-        /// that use the old ID will partially fail during loading.
-        /// </summary>
-        public override Guid ComponentGuid
-        {
-            get { return new Guid("c9856bc7-6ce8-4d01-8f39-c97b80e6c950"); }
-        }
+        public override GH_Exposure Exposure => GH_Exposure.primary | GH_Exposure.obscure;
+
+        public override Guid ComponentGuid => new Guid("{1A6C1AE2-E074-407D-B896-7F7510B5EA40}");
     }
 }
