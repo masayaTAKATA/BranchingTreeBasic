@@ -10,11 +10,9 @@ namespace BranchingTreeBasic
     public class BranchingTreeBasicComponent : GH_Component
     {
         //Constructor
-
         public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BranchingTreeBasic", "For prototype", "User", "Test")
         {
         }
-
         //Input
         protected override void RegisterInputParams(GH_Component.GH_InputParamManager pManager)
         {
@@ -23,7 +21,6 @@ namespace BranchingTreeBasic
             pManager.AddNumberParameter("Branch Scale", "BS", "The Scale of branches", GH_ParamAccess.item);
             pManager.AddIntegerParameter("Branch Number", "N", "The number of branches", GH_ParamAccess.item);
         }
-
         //Output
         protected override void RegisterOutputParams(GH_Component.GH_OutputParamManager pManager)
         {
@@ -50,15 +47,15 @@ namespace BranchingTreeBasic
             double bAngRad = ((Math.PI / 100) * branchAngle);
 
             //Create a new line in the yDirection from the origin and add it to the list
-            List<Line> lines = new List<Line>();
-            Point3d stPt = new Point3d(0, 0, 0);
-            Vector3d unitYvect = new Vector3d(0, 1, 0);
-            Line ln0 = new Line(stPt, unitYvect, length);
+            var lines = new List<Line>();
+            var stPt = new Point3d(0, 0, 0);
+            var unitYvect = new Vector3d(0, 1, 0);
+            var ln0 = new Line(stPt, unitYvect, length);
             lines.Add(ln0);
 
             //Create two temporary lists and set the first equal to the lines list
-            List<Line> tempList = new List<Line>();
-            List<Line> tempList2 = new List<Line>();
+            var tempList = new List<Line>();
+            var tempList2 = new List<Line>();
             tempList = lines;
 
             int i = 0;
@@ -88,13 +85,13 @@ namespace BranchingTreeBasic
                 double newLength = ln.Length * bScale;
 
                 //Get the endPt of the trunk and its tangent vector.
-                Point3d endPt = ln.To;
-                Vector3d unitTan = ln.UnitTangent;
+                var endPt = ln.To;
+                var unitTan = ln.UnitTangent;
 
                 //Create two new lines and make the second line have a negative rotation anngle
-                Line ln1 = new Line(endPt, unitTan, newLength);
+                var ln1 = new Line(endPt, unitTan, newLength);
                 ln1.Transform(Rhino.Geometry.Transform.Rotation(bAng, endPt));
-                Line ln2 = new Line(endPt, unitTan, newLength);
+                var ln2 = new Line(endPt, unitTan, newLength);
                 ln2.Transform(Rhino.Geometry.Transform.Rotation(bAng * -1, endPt));
 
                 //Add these new branches to the list
