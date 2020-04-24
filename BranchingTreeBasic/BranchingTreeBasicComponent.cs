@@ -10,7 +10,7 @@ namespace BranchingTreeBasic
     public class BranchingTreeBasicComponent : GH_Component
     {
         //Constructor
-        public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BranchingTreeBasic", "For prototype", "User", "Default")
+        public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BTB", "For prototype", "User", "Default")
         {
         }
         //Input
@@ -54,16 +54,16 @@ namespace BranchingTreeBasic
             lines.Add(ln0);
 
             //Create two temporary lists and set the first equal to the lines list
-            var tempList = new List<Line>();
-            var tempList2 = new List<Line>();
-            tempList = lines;
+            var tempList01 = new List<Line>();
+            var tempList02 = new List<Line>();
+            tempList01 = lines;
 
             int i = 0;
             while (i < num)
             {
-                tempList2 = CreateBranch(tempList, branchScale, bAngRad);
-                tempList = tempList2;
-                lines.AddRange(tempList2);
+                tempList02 = CreateBranch(tempList01, branchScale, bAngRad);
+                tempList01 = tempList02;
+                lines.AddRange(tempList02);
                 i++;
             }
 
