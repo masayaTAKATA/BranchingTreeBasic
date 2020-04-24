@@ -113,40 +113,29 @@ namespace BranchingTreeBasic
 
         protected override void SolveInstance(IGH_DataAccess DA)
         {
+            //Declare placeholder variables for the input data
+            double length = double.NaN;
+            double branchAngle = double.NaN;
+            double branchScale = double.NaN;
+            int num = 0;
+
+            //Retrieve input data
+            if (!DA.GetData(0, ref length)) { return; }
+            if (!DA.GetData(1, ref branchAngle)) { return; }
+            if (!DA.GetData(2, ref branchScale)) { return; }
+            if (!DA.GetData(3, ref num)) { return; }
+
             if (InPreSolve)
             {
-                //Declare placeholder variables for the input data
-                double length = double.NaN;
-                double branchAngle = double.NaN;
-                double branchScale = double.NaN;
-                int num = 0;
-
-                //Retrieve input data
-                if (!DA.GetData(0, ref length)) { return; }
-                if (!DA.GetData(1, ref branchAngle)) { return; }
-                if (!DA.GetData(2, ref branchScale)) { return; }
-                if (!DA.GetData(3, ref num)) { return; }
-
                 //Queue up the task
                 Task<SolveResults> task = Task.Run(() => ComputeRecursiveLines(length, branchAngle, branchScale, num), CancelToken);
                 TaskList.Add(task);
 
                 return;
-
             }
 
             if(!GetSolveResults(DA, out SolveResults result))
             {
-                double length = double.NaN;
-                double branchAngle = double.NaN;
-                double branchScale = double.NaN;
-                int num = 0;
-
-                DA.GetData(0, ref length);
-                DA.GetData(1, ref branchAngle);
-                DA.GetData(2, ref branchScale);
-                DA.GetData(3, ref num);
-
                 //Compute result on a given data
                 result = ComputeRecursiveLines(length, branchAngle, branchScale, num);
             }
