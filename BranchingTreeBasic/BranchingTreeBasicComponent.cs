@@ -103,8 +103,11 @@ namespace BranchingTreeBasic
 
         }
 
-        
-        //>>Icon made by Freepik from www.flaticon.com 
+
+        /// <summary>
+        /// https://www.flaticon.com/
+        ///Icon made by Freepik from www.flaticon.com 
+        /// </summary>
         protected override System.Drawing.Bitmap Icon => BranchingTreeBasic.Properties.Resources.treeIcon;
 
         public override GH_Exposure Exposure => GH_Exposure.primary | GH_Exposure.obscure;
