@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("BranchingTreeBasic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("meenaxydesign")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("BranchingTreeBasic")]
-[assembly: AssemblyCopyright("Copyright © meenaxydesign. 2018-2020")]
+[assembly: AssemblyCopyright("Copyright © 2018-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
