@@ -14,7 +14,7 @@ namespace BranchingTreeBasic
     public class BranchingTreeBasicTaskComponent : GH_TaskCapableComponent<BranchingTreeBasicTaskComponent.SolveResults>
     {
         //Constructor
-        public BranchingTreeBasicTaskComponent() : base("BranchingTreeBasic_Task", "BTB_t", "Multi-threading compute Recursive treeline", "User", "Test")
+        public BranchingTreeBasicTaskComponent() : base("BranchingTreeBasic_Task", "BTB_t", "Multi-threading compute Recursive treeline", "Meenaxy", "Test")
         {
         }
 

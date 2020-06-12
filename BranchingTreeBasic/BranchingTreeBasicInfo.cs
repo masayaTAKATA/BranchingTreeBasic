@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using Grasshopper;
 using Grasshopper.Kernel;
 
 namespace BranchingTreeBasic
@@ -26,7 +27,7 @@ namespace BranchingTreeBasic
             get
             {
                 //Return a short string describing the purpose of this GHA library.
-                return "";
+                return "WIP";
             }
         }
         public override Guid Id
@@ -52,6 +53,16 @@ namespace BranchingTreeBasic
                 //Return a string representing your preferred contact details.
                 return "";
             }
+        }
+    }
+
+    public class MeenaxyCategoryIcon : GH_AssemblyPriority
+    {
+        public override GH_LoadingInstruction PriorityLoad()
+        {
+            Instances.ComponentServer.AddCategoryIcon("Meenaxy", Properties.Resources.meenaxyLogo);
+            Instances.ComponentServer.AddCategorySymbolName("Meenaxy", 'M');
+            return GH_LoadingInstruction.Proceed;
         }
     }
 }

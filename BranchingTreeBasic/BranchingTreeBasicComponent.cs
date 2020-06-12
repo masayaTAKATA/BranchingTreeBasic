@@ -10,7 +10,7 @@ namespace BranchingTreeBasic
     public class BranchingTreeBasicComponent : GH_Component
     {
         //Constructor
-        public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BTB", "For prototype", "User", "Default")
+        public BranchingTreeBasicComponent() : base("BranchingTreeBasic", "BTB", "For prototype", "Meenaxy", "Default")
         {
         }
         //Input
